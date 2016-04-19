@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.dpro.com/DPScan" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.dpro.com/DPScan" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.dpro.com/DPScan">
+      <s:element name="CountAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:AccessRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccessRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CountAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountAccessResult" type="tns:AccessResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccessResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShippingAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:AccessRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShippingAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShippingAccessResult" type="tns:AccessResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceivingAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:AccessRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceivingAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceivingAccessResult" type="tns:AccessResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItemTransferAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:AccessRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItemTransferAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemTransferAccessResult" type="tns:AccessResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItemToProjectAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:AccessRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItemToProjectAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemToProjectAccessResult" type="tns:AccessResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ItemRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ItemRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemResult" type="tns:ItemResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ItemResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentCount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ProjectRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProjectRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectResult" type="tns:ProjectResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProjectResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:UpdateCountRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateCountRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewCount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCountResult" type="tns:UpdateCountResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateCountResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceivingValidatePO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ReceivingValidatePORequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceivingValidatePORequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseOrder" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceivingValidatePOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceivingValidatePOResult" type="tns:ReceivingValidatePOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceivingValidatePOResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceivingValidateItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ReceivingValidateItemRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceivingValidateItemRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseOrder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceivingValidateItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceivingValidateItemResult" type="tns:ReceivingValidateItemResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceivingValidateItemResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceivingPostReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ReceivingPostReceiptRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceivingPostReceiptRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseOrder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Quantity" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceivingPostReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceivingPostReceiptResult" type="tns:ReceivingPostReceiptResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceivingPostReceiptResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShippingValidateSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ShippingValidateSORequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShippingValidateSORequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesOrder" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShippingValidateSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShippingValidateSOResult" type="tns:ShippingValidateSOResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShippingValidateSOResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShippingValidateItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ShippingValidateItemRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShippingValidateItemRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesOrder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShippingValidateItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShippingValidateItemResult" type="tns:ShippingValidateItemResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShippingValidateItemResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShippingPostShipment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ShippingPostShipmentRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="SODetailLines" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShippingPostShipmentRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesOrder" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ShippingPostShipmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShippingPostShipmentResult" type="tns:ShippingPostShipmentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShippingPostShipmentResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ItemTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ItemTransferRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ItemTransferRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SourceItemNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationItemNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ItemTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemTransferResult" type="tns:ItemTransferResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ItemTransferResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ItemToProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRequest" type="tns:ItemToProjectRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ItemToProjectRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ItemToProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemToProjectResult" type="tns:ItemToProjectResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ItemToProjectResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CountAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:CountAccess" />
+  </wsdl:message>
+  <wsdl:message name="CountAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:CountAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShippingAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:ShippingAccess" />
+  </wsdl:message>
+  <wsdl:message name="ShippingAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:ShippingAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceivingAccess" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceivingAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemTransferAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:ItemTransferAccess" />
+  </wsdl:message>
+  <wsdl:message name="ItemTransferAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:ItemTransferAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemToProjectAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:ItemToProjectAccess" />
+  </wsdl:message>
+  <wsdl:message name="ItemToProjectAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:ItemToProjectAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItem" />
+  </wsdl:message>
+  <wsdl:message name="GetItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProject" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCountSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCount" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCountSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingValidatePOSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceivingValidatePO" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingValidatePOSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceivingValidatePOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingValidateItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceivingValidateItem" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingValidateItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceivingValidateItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingPostReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceivingPostReceipt" />
+  </wsdl:message>
+  <wsdl:message name="ReceivingPostReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceivingPostReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShippingValidateSOSoapIn">
+    <wsdl:part name="parameters" element="tns:ShippingValidateSO" />
+  </wsdl:message>
+  <wsdl:message name="ShippingValidateSOSoapOut">
+    <wsdl:part name="parameters" element="tns:ShippingValidateSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShippingValidateItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ShippingValidateItem" />
+  </wsdl:message>
+  <wsdl:message name="ShippingValidateItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ShippingValidateItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShippingPostShipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:ShippingPostShipment" />
+  </wsdl:message>
+  <wsdl:message name="ShippingPostShipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:ShippingPostShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:ItemTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ItemTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:ItemTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemToProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:ItemToProject" />
+  </wsdl:message>
+  <wsdl:message name="ItemToProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:ItemToProjectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DPScanServiceSoap">
+    <wsdl:operation name="CountAccess">
+      <wsdl:input message="tns:CountAccessSoapIn" />
+      <wsdl:output message="tns:CountAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShippingAccess">
+      <wsdl:input message="tns:ShippingAccessSoapIn" />
+      <wsdl:output message="tns:ShippingAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingAccess">
+      <wsdl:input message="tns:ReceivingAccessSoapIn" />
+      <wsdl:output message="tns:ReceivingAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ItemTransferAccess">
+      <wsdl:input message="tns:ItemTransferAccessSoapIn" />
+      <wsdl:output message="tns:ItemTransferAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ItemToProjectAccess">
+      <wsdl:input message="tns:ItemToProjectAccessSoapIn" />
+      <wsdl:output message="tns:ItemToProjectAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input message="tns:GetItemSoapIn" />
+      <wsdl:output message="tns:GetItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <wsdl:input message="tns:GetProjectSoapIn" />
+      <wsdl:output message="tns:GetProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCount">
+      <wsdl:input message="tns:UpdateCountSoapIn" />
+      <wsdl:output message="tns:UpdateCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingValidatePO">
+      <wsdl:input message="tns:ReceivingValidatePOSoapIn" />
+      <wsdl:output message="tns:ReceivingValidatePOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingValidateItem">
+      <wsdl:input message="tns:ReceivingValidateItemSoapIn" />
+      <wsdl:output message="tns:ReceivingValidateItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingPostReceipt">
+      <wsdl:input message="tns:ReceivingPostReceiptSoapIn" />
+      <wsdl:output message="tns:ReceivingPostReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShippingValidateSO">
+      <wsdl:input message="tns:ShippingValidateSOSoapIn" />
+      <wsdl:output message="tns:ShippingValidateSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShippingValidateItem">
+      <wsdl:input message="tns:ShippingValidateItemSoapIn" />
+      <wsdl:output message="tns:ShippingValidateItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShippingPostShipment">
+      <wsdl:input message="tns:ShippingPostShipmentSoapIn" />
+      <wsdl:output message="tns:ShippingPostShipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ItemTransfer">
+      <wsdl:input message="tns:ItemTransferSoapIn" />
+      <wsdl:output message="tns:ItemTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ItemToProject">
+      <wsdl:input message="tns:ItemToProjectSoapIn" />
+      <wsdl:output message="tns:ItemToProjectSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DPScanServiceSoap" type="tns:DPScanServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CountAccess">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/CountAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingAccess">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ShippingAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingAccess">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ReceivingAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemTransferAccess">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ItemTransferAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemToProjectAccess">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ItemToProjectAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/GetProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCount">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/UpdateCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingValidatePO">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ReceivingValidatePO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingValidateItem">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ReceivingValidateItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingPostReceipt">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ReceivingPostReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingValidateSO">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ShippingValidateSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingValidateItem">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ShippingValidateItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingPostShipment">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ShippingPostShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemTransfer">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ItemTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemToProject">
+      <soap:operation soapAction="http://www.dpro.com/DPScan/ItemToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DPScanServiceSoap12" type="tns:DPScanServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CountAccess">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/CountAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingAccess">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ShippingAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingAccess">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ReceivingAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemTransferAccess">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ItemTransferAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemToProjectAccess">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ItemToProjectAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/GetItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/GetProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCount">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/UpdateCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingValidatePO">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ReceivingValidatePO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingValidateItem">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ReceivingValidateItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivingPostReceipt">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ReceivingPostReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingValidateSO">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ShippingValidateSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingValidateItem">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ShippingValidateItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingPostShipment">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ShippingPostShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemTransfer">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ItemTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemToProject">
+      <soap12:operation soapAction="http://www.dpro.com/DPScan/ItemToProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DPScanService">
+    <wsdl:port name="DPScanServiceSoap" binding="tns:DPScanServiceSoap">
+      <soap:address location="http://www.dpro.com/dpscanservice/dpscan.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DPScanServiceSoap12" binding="tns:DPScanServiceSoap12">
+      <soap12:address location="http://www.dpro.com/dpscanservice/dpscan.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D03938D8-2BE0-432B-A38E-46FABE0EE73D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DpfsLinkTestApplication</RootNamespace>
+    <AssemblyName>DpfsLinkTestApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DpfsLinkTestApplication.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMessage.Designer.cs">
+      <DependentUpon>AddMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DNSHeader.cs" />
+    <Compile Include="IPHeader.cs" />
+    <Compile Include="IPSavedHeaderPackets.cs" />
+    <Compile Include="junk.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OldCode\oldcode.cs" />
+    <Compile Include="SelectDPScanService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectDPScanService.Designer.cs">
+      <DependentUpon>SelectDPScanService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="__Console__\ClientSize.cs" />
+    <Compile Include="__Console__\Console.cs" />
+    <Compile Include="__Console__\EnumExtensions.cs" />
+    <Compile Include="__Console__\SimpleDictionary.cs" />
+    <Compile Include="__Console__\tbConsoleTextDPScan.cs" />
+    <Compile Include="__Monster__\BoboSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="__Monster__\BoboSuccess.Designer.cs">
+      <DependentUpon>BoboSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="__Monster__\Monster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="__Monster__\Monster.Designer.cs">
+      <DependentUpon>Monster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCPHeader.cs" />
+    <Compile Include="UDPHeader.cs" />
+    <Compile Include="Web References\com.dpro.www\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="__SOAP__\DPscanService.cs" />
+    <EmbeddedResource Include="AddMessage.resx">
+      <DependentUpon>AddMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectDPScanService.resx">
+      <DependentUpon>SelectDPScanService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="__Monster__\BoboSuccess.resx">
+      <DependentUpon>BoboSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="__Monster__\Monster.resx">
+      <DependentUpon>Monster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.AccessRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.CountAccessCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.DPScanService.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.GetItemCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.GetProjectCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ItemRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ItemToProjectAccessCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ItemToProjectCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ItemToProjectRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ItemTransferAccessCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ItemTransferCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ItemTransferRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ProjectRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ReceivingAccessCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ReceivingPostReceiptCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ReceivingPostReceiptRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ReceivingValidateItemCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ReceivingValidateItemRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ReceivingValidatePOCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ReceivingValidatePORequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ShippingAccessCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ShippingPostShipmentCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ShippingPostShipmentRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ShippingValidateItemCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ShippingValidateItemRequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ShippingValidateSOCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.ShippingValidateSORequest.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.UpdateCountCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\DpfsLinkTestApplication.com.dpro.www.UpdateCountRequest.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\com.dpro.www\AccessResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\dpscan.wsdl" />
+    <None Include="Web References\com.dpro.www\ItemResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ItemToProjectResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ItemTransferResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ProjectResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ReceivingPostReceiptResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ReceivingValidateItemResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ReceivingValidatePOResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.dpro.www\ShippingPostShipmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ShippingValidateItemResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\ShippingValidateSOResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.dpro.www\UpdateCountResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.dpro.com/dpscanservice/dpscan.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.dpro.www\</RelPath>
+      <UpdateFromURL>http://www.dpro.com/dpscanservice/dpscan.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DpfsLinkTestApplication_com_dpro_www_DPScanService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.dpro.www\dpscan.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\bobo-next0001.jpg" />
+    <Content Include="Assets\Images\bobo-next0002.jpg" />
+    <Content Include="Assets\Images\bobo-success.jpg" />
+    <Content Include="Assets\Images\bobo.png" />
+    <Content Include="Assets\Images\dead.gif" />
+    <Content Include="Assets\Images\win.jpg" />
+    <None Include="Resources\bobo-success.jpg" />
+    <None Include="Resources\bobo-next0002.jpg" />
+    <None Include="Resources\bobo-next0001.jpg" />
+    <None Include="Resources\win.jpg" />
+    <None Include="Resources\dead.gif" />
+    <None Include="Resources\bobo.png" />
+    <None Include="Resources\Monster.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
